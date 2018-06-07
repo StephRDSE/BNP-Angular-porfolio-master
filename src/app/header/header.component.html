@@ -1,0 +1,20 @@
+<!-- <ul>
+  <li (click)="selectMenu('bio')" [style.color]="menuService.selectedMenu == 'bio' ? 'red' : 'blue'">
+    Bio</li>
+  <li (click)="selectMenu('real')" [style.color]="menuService.selectedMenu == 'real' ? 'red' : 'blue'">
+    Réalisations</li>
+  <li (click)="selectMenu('contact')" [style.color]="menuService.selectedMenu == 'contact' ? 'red' : 'blue'">
+    Contact</li>
+</ul> -->
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-around center">
+  
+  <span
+    *ngFor="let menu of menuService.getList('header')"
+    [style.color]="menuService.selectedMenu == menu.id ? 'grey' : 'white'"
+    (click)="selectMenu(menu.id)">
+    {{ menu.label }}
+  </span>
+
+</mat-toolbar>
+
+
